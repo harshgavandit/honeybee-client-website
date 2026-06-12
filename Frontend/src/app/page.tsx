@@ -3,38 +3,45 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
 import { DeliveryChecker } from "@/components/delivery-checker";
 import { ProductCard } from "@/components/product-card";
+import { TestimonialsSection } from "@/components/testimonials-section";
+import { FAQSection } from "@/components/faq-section";
 import { processSteps, products, trustPoints } from "@/lib/data";
+import { generateOrganizationSchema } from "@/lib/metadata";
 
 export default function HomePage() {
+  const organizationSchema = generateOrganizationSchema();
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       <section className="bg-[#fffaf0]">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-14">
           <div className="flex flex-col justify-center">
             <p className="text-sm font-bold uppercase tracking-wide text-leaf">
-              Pure local honey from a beekeeper
+              🍯 Direct from our farm to your table
             </p>
             <h1 className="mt-4 text-4xl font-bold leading-tight text-ink sm:text-6xl">
-              Order fresh honey jars with UPI, COD, and delivery updates.
+              Pure honey. No compromise.
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-stone-700">
-              Choose 100 ml, 200 ml, or 500 ml honey, check your pincode,
-              place your order, and receive WhatsApp plus email updates from
-              order placed to payment verification.
+              100% raw honey from our farm in Raigad, harvested with care and packed fresh. Choose your size, verify delivery to your pincode, and order today with UPI or Cash on Delivery. Track your order on WhatsApp.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/buy-honey"
-                className="focus-ring inline-flex items-center justify-center gap-2 rounded-md bg-leaf px-5 py-3 font-semibold text-white shadow-soft"
+                className="focus-ring inline-flex items-center justify-center gap-2 rounded-md bg-leaf px-5 py-3 font-semibold text-white shadow-soft hover:bg-leaf/90 transition"
               >
-                Buy honey
+                Order Now
                 <ArrowRight size={19} />
               </Link>
               <Link
                 href="/bee-hive"
-                className="focus-ring inline-flex items-center justify-center rounded-md border border-stone-300 bg-white px-5 py-3 font-semibold"
+                className="focus-ring inline-flex items-center justify-center rounded-md border border-stone-300 bg-white px-5 py-3 font-semibold hover:bg-honey-50 transition"
               >
-                See our process
+                See Our Process
               </Link>
             </div>
             <div className="mt-8 max-w-xl">
@@ -82,7 +89,7 @@ export default function HomePage() {
               <p className="text-sm font-bold uppercase tracking-wide text-leaf">
                 Choose your jar
               </p>
-              <h2 className="mt-2 text-3xl font-bold">Honey sizes for every home</h2>
+              <h2 className="mt-2 text-3xl font-bold">Find your perfect size</h2>
             </div>
             <Link href="/products" className="font-semibold text-leaf">
               View all products
@@ -95,6 +102,10 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <TestimonialsSection />
+
+      <FAQSection />
 
       <section className="bg-white py-14">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">

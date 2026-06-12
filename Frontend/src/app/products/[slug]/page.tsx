@@ -1,11 +1,29 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ShoppingBag } from "lucide-react";
 import { formatPrice, getProductBySlug, products } from "@/lib/data";
+import { generateMetadata as createMetadata, generateProductSchema } from "@/lib/metadata";
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const product = getProductBySlug(params.slug);
+  if (!product) notFound();
+
+  return createMetadata(
+    `Pure Honey ${product.size} - ${product.price} INR`,
+    `100% pure raw honey in ${product.size} jar. No additives. No processing. ${product.description.substring(0, 100)}...`,
+    `/products/${product.slug}`,
+    product.image
+  );
 }
 
 export default function ProductDetailPage({
@@ -16,8 +34,18 @@ export default function ProductDetailPage({
   const product = getProductBySlug(params.slug);
   if (!product) notFound();
 
+  const productSchema = generateProductSchema(
+    `${product.name} ${product.size}`,
+    product.price,
+    product.size
+  );
+
   return (
     <section className="py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Link href="/products" className="inline-flex items-center gap-2 text-sm font-semibold text-leaf">
           <ArrowLeft size={17} />

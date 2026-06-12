@@ -5,9 +5,9 @@ export default function AdminPage() {
   return (
     <>
       <PageHero
-        eyebrow="Admin"
-        title="Manage orders, UPI verification, and COD status."
-        text="This local v1 dashboard reads orders from browser storage. Replace it with protected database-backed admin after production setup."
+        eyebrow="Order Management"
+        title="Manage and track orders."
+        text="View all orders, verify payments, and monitor delivery status."
       />
       <AdminDashboard />
     </>

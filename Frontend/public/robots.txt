@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://honeybeefarm.in/sitemap.xml
+
+# Block admin and sensitive pages
+Disallow: /admin
+
+# Allow specific crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

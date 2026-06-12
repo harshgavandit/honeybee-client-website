@@ -15,6 +15,11 @@ const config: Config = {
         },
         leaf: "#2f6b4f",
         ink: "#1e201c",
+        // Semantic colors for UI states
+        success: "#10b981",
+        error: "#ef4444",
+        warning: "#f59e0b",
+        info: "#3b82f6",
       },
       boxShadow: {
         soft: "0 18px 55px rgba(55, 42, 19, 0.12)",

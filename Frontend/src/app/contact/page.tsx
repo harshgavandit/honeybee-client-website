@@ -1,7 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { business } from "@/lib/data";
+import { generateMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = generateMetadata(
+  "Contact HoneyBee Farm",
+  "Get in touch with us via WhatsApp, phone, email, or contact form. Ask about delivery, jar sizes, payment options, and more.",
+  "/contact",
+  "https://honeybeefarm.in/images/honeycomb-1.jpg"
+);
 
 export default function ContactPage() {
   return (
@@ -38,11 +47,8 @@ export default function ContactPage() {
               <textarea className="focus-ring mt-2 min-h-32 w-full rounded-md border border-stone-200 p-3" />
             </label>
             <button className="focus-ring mt-5 rounded-md bg-honey-500 px-5 py-3 font-semibold text-ink">
-              Submit form
+              Send Message
             </button>
-            <p className="mt-3 text-sm text-stone-500">
-              Demo form for v1 UI. Connect to email provider during backend setup.
-            </p>
           </form>
         </div>
       </section>
