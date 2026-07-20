@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/footer";
@@ -7,6 +7,7 @@ import { Header } from "@/components/header";
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://honeybeefarm.in"),
   title: "HoneyBee Farm | Pure Local Honey Direct from Farm",
   description:
     "100% pure honey directly from our farm in Raigad, Maharashtra. Order fresh honey with UPI/COD payment, delivery estimates, and WhatsApp updates. 7-day money-back guarantee.",
@@ -69,6 +70,12 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#2f6b4f",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -76,16 +83,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta httpEquiv="x-ua-compatible" content="IE=edge" />
-        <meta name="theme-color" content="#2f6b4f" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-      </head>
       <body className={inter.className}>
         <div className="page-shell flex min-h-screen flex-col">
           <Header />
@@ -96,4 +93,3 @@ export default function RootLayout({
     </html>
   );
 }
-

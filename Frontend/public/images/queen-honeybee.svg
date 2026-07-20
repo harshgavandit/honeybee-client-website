@@ -1,0 +1,50 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Queen honeybee on honeycomb</title>
+  <desc id="desc">A polished illustration of a queen honeybee resting on golden honeycomb.</desc>
+  <rect width="1200" height="900" fill="#FFF7DC"/>
+  <defs>
+    <pattern id="honeycomb" width="68" height="58" patternUnits="userSpaceOnUse">
+      <path d="M17 2H51L68 29L51 56H17L0 29L17 2Z" fill="#F4C04C" stroke="#B67816" stroke-width="3"/>
+    </pattern>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(610 420) rotate(90) scale(410 520)">
+      <stop stop-color="#FFE7A3"/>
+      <stop offset="1" stop-color="#FFF7DC" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="body" x1="445" y1="305" x2="752" y2="650" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8C85B"/>
+      <stop offset="0.45" stop-color="#B76D1F"/>
+      <stop offset="1" stop-color="#48240C"/>
+    </linearGradient>
+    <linearGradient id="wing" x1="375" y1="190" x2="760" y2="485" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#CFE9FF" stop-opacity="0.28"/>
+    </linearGradient>
+  </defs>
+  <rect x="-80" y="350" width="1380" height="620" fill="url(#honeycomb)" opacity="0.36"/>
+  <ellipse cx="600" cy="430" rx="520" ry="360" fill="url(#glow)"/>
+  <path d="M360 465C255 320 245 205 345 178C463 146 548 279 558 413C463 454 417 468 360 465Z" fill="url(#wing)" stroke="#7BA8B8" stroke-width="7" opacity="0.82"/>
+  <path d="M840 465C945 320 955 205 855 178C737 146 652 279 642 413C737 454 783 468 840 465Z" fill="url(#wing)" stroke="#7BA8B8" stroke-width="7" opacity="0.82"/>
+  <path d="M601 234C681 234 742 308 742 430C742 585 674 720 601 720C528 720 458 585 458 430C458 308 521 234 601 234Z" fill="url(#body)" stroke="#2F1B0B" stroke-width="10"/>
+  <path d="M472 394C545 428 660 428 730 394" stroke="#2B1708" stroke-width="28" stroke-linecap="round" opacity="0.75"/>
+  <path d="M466 492C544 528 660 528 736 492" stroke="#2B1708" stroke-width="30" stroke-linecap="round" opacity="0.78"/>
+  <path d="M486 596C552 628 650 628 715 596" stroke="#2B1708" stroke-width="28" stroke-linecap="round" opacity="0.78"/>
+  <ellipse cx="600" cy="235" rx="92" ry="78" fill="#2C190B" stroke="#1B0D05" stroke-width="9"/>
+  <circle cx="566" cy="222" r="18" fill="#F7D06A"/>
+  <circle cx="635" cy="222" r="18" fill="#F7D06A"/>
+  <path d="M548 173C515 121 482 95 448 86" stroke="#2C190B" stroke-width="10" stroke-linecap="round"/>
+  <path d="M652 173C685 121 718 95 752 86" stroke="#2C190B" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="438" cy="82" r="15" fill="#2C190B"/>
+  <circle cx="762" cy="82" r="15" fill="#2C190B"/>
+  <path d="M536 142L566 78L600 128L634 78L664 142H536Z" fill="#F0A91C" stroke="#7A480E" stroke-width="8" stroke-linejoin="round"/>
+  <circle cx="566" cy="76" r="12" fill="#FFD45F"/>
+  <circle cx="600" cy="126" r="10" fill="#FFD45F"/>
+  <circle cx="634" cy="76" r="12" fill="#FFD45F"/>
+  <path d="M462 396C386 424 321 476 277 552" stroke="#2C190B" stroke-width="13" stroke-linecap="round"/>
+  <path d="M738 396C814 424 879 476 923 552" stroke="#2C190B" stroke-width="13" stroke-linecap="round"/>
+  <path d="M475 506C392 553 350 610 325 690" stroke="#2C190B" stroke-width="13" stroke-linecap="round"/>
+  <path d="M725 506C808 553 850 610 875 690" stroke="#2C190B" stroke-width="13" stroke-linecap="round"/>
+  <path d="M514 661C470 710 441 756 427 814" stroke="#2C190B" stroke-width="12" stroke-linecap="round"/>
+  <path d="M686 661C730 710 759 756 773 814" stroke="#2C190B" stroke-width="12" stroke-linecap="round"/>
+  <ellipse cx="600" cy="748" rx="230" ry="38" fill="#7B4B16" opacity="0.18"/>
+  <rect x="78" y="76" width="1044" height="748" rx="34" stroke="#F0A91C" stroke-width="4" opacity="0.45"/>
+</svg>

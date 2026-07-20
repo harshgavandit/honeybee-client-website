@@ -3,6 +3,7 @@
 import { faqs } from "@/lib/data";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 export function FAQSection({ limit = 3 }: { limit?: number }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -48,12 +49,12 @@ export function FAQSection({ limit = 3 }: { limit?: number }) {
 
         {limit < faqs.length && (
           <div className="mt-8 text-center">
-            <a
+            <Link
               href="/faq"
               className="inline-flex items-center justify-center rounded-md border border-leaf px-6 py-3 font-semibold text-leaf hover:bg-leaf hover:text-white transition"
             >
               View all {faqs.length} questions
-            </a>
+            </Link>
           </div>
         )}
 
@@ -63,12 +64,12 @@ export function FAQSection({ limit = 3 }: { limit?: number }) {
             Contact us via WhatsApp, email, or phone. We're here to help!
           </p>
           <div className="mt-4 flex flex-col sm:flex-row gap-3 justify-center">
-            <a
+            <Link
               href="/contact"
               className="inline-flex items-center justify-center rounded-md bg-white text-leaf px-6 py-2 font-semibold hover:bg-honey-50 transition"
             >
               Get in touch
-            </a>
+            </Link>
           </div>
         </div>
       </div>

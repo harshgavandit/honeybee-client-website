@@ -9,6 +9,7 @@ export type Product = {
   short: string;
   description: string;
   bestFor: string[];
+  highlights: string[];
   image: string;
   color: string;
 };
@@ -24,6 +25,7 @@ export const products: Product[] = [
     description:
       "A compact bottle for first-time customers who want to taste fresh local honey before ordering a bigger jar.",
     bestFor: ["Trial orders", "Daily spoon", "Travel-friendly"],
+    highlights: ["Packed fresh", "No added sugar", "Easy first order"],
     image:
       "https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=900&q=80",
     color: "bg-honey-100",
@@ -38,6 +40,7 @@ export const products: Product[] = [
     description:
       "The everyday size for customers who use honey regularly in milk, lemon water, breakfast bowls, and recipes.",
     bestFor: ["Small families", "Breakfast", "Home remedies"],
+    highlights: ["Best starter size", "UPI or COD", "WhatsApp support"],
     image:
       "https://images.unsplash.com/photo-1555211652-5c6222f971bc?auto=format&fit=crop&w=900&q=80",
     color: "bg-[#e9f5dc]",
@@ -52,6 +55,7 @@ export const products: Product[] = [
     description:
       "A generous jar for homes that replace refined sugar with honey and prefer buying directly from a beekeeper.",
     bestFor: ["Monthly use", "Best value", "Family pantry"],
+    highlights: ["Best value", "Family use", "Fresh batch packing"],
     image:
       "https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=900&q=80",
     color: "bg-[#f8e2a4]",
@@ -127,37 +131,37 @@ export const testimonials: Testimonial[] = [
   {
     name: "Rajesh M.",
     location: "Pune",
-    text: "Finally found pure honey I can trust. Pure taste, fresh delivery, and reasonable prices. Already ordered twice!",
+    text: "The honey tasted fresh and natural. Ordering was simple and the WhatsApp updates were helpful.",
     verified: true,
   },
   {
     name: "Anita P.",
     location: "Mumbai",
-    text: "Loved the taste. Way better than market brands. My family loves it with warm milk every morning.",
+    text: "Loved the taste. My family uses it with warm milk and breakfast.",
     verified: true,
   },
   {
     name: "Vikram N.",
     location: "Bangalore",
-    text: "Great quality for the price. Very fresh. Will order again for sure. Highly recommended!",
+    text: "Good quality for the price. The jar arrived safely and was packed neatly.",
     verified: true,
   },
   {
     name: "Priya K.",
     location: "Nashik",
-    text: "Direct from the beekeeper - that's exactly what I was looking for. No middleman, pure honey.",
+    text: "Buying directly from the beekeeper gave me more confidence than a random marketplace listing.",
     verified: true,
   },
   {
     name: "Amit D.",
     location: "Delhi NCR",
-    text: "Ordered for my kids. The purity and freshness are unmatched. Worth every rupee.",
+    text: "Ordered for family use. Clear communication and good freshness.",
     verified: true,
   },
   {
     name: "Meera S.",
     location: "Ahmedabad",
-    text: "Fantastic honey! My whole family switched from store-bought honey to this. Very satisfied.",
+    text: "A smooth order experience and a clean, natural taste.",
     verified: true,
   },
 ];
@@ -170,15 +174,15 @@ export type FAQ = {
 export const faqs: FAQ[] = [
   {
     q: "How is your honey produced?",
-    a: "Our honey is produced by our own managed honeybee colonies. We maintain healthy colonies in clean, low-disturbance bee boxes near flowering areas. When the honeycomb is full, we carefully extract the honey, filter it, and pack it in jars. No heating, no processing, just pure honey.",
+    a: "Our honey is produced from managed honeybee colonies near flowering areas. When the honeycomb is ready, we extract, filter, and pack the honey carefully in small batches.",
   },
   {
     q: "Is it pure and raw honey?",
-    a: "Yes, 100% pure honey with no additives, adulterants, or artificial sweeteners. We do minimal processing to preserve the natural nutrients and enzymes. It's as close to what comes from the hive as possible.",
+    a: "We sell honey with no added sugar, artificial sweeteners, or flavours. Each batch is handled with a simple, direct process from hive care to packing.",
   },
   {
     q: "What's the shelf life of honey?",
-    a: "Honey lasts indefinitely when stored properly. Some of the oldest honey ever found (3000+ years) was still perfectly edible! Store your honey in a cool, dry place away from direct sunlight.",
+    a: "Honey keeps well when stored in a clean, tightly closed jar away from moisture, heat, and direct sunlight.",
   },
   {
     q: "Why does honey crystallize?",
@@ -198,7 +202,7 @@ export const faqs: FAQ[] = [
   },
   {
     q: "What's your return and refund policy?",
-    a: "We offer a 7-day money-back guarantee on unopened products. If you're not satisfied or if the product arrives damaged, contact us within 7 days for a full refund or replacement. See our Returns & Refund Policy for complete details.",
+    a: "If your product arrives damaged or there is an order issue, contact us within 7 days with photos and your order details so we can help with a replacement or refund where applicable.",
   },
   {
     q: "Do you deliver to my area?",
@@ -206,15 +210,15 @@ export const faqs: FAQ[] = [
   },
   {
     q: "How do I track my order?",
-    a: "After placing your order, you'll receive an order number via email and WhatsApp. We'll keep you updated on delivery status through WhatsApp messages. You'll know exactly when your honey is arriving.",
+    a: "After placing your order, you receive an order number and can continue the conversation on WhatsApp. We use WhatsApp for payment verification and delivery coordination.",
   },
   {
     q: "Is my payment secure?",
-    a: "Yes, all payments are processed through secure payment gateways. We never store your full payment details on our servers. Your information is protected and encrypted.",
+    a: "For UPI orders, you pay directly to our UPI ID and submit the transaction reference. For COD orders, you pay at delivery. We do not collect card details on this website.",
   },
   {
     q: "What if I don't like the honey?",
-    a: "We're confident you'll love it, but if for any reason you're not satisfied, we offer a 7-day money-back guarantee. No questions asked. Your satisfaction is our priority.",
+    a: "Contact us within 7 days if there is a quality, leakage, damage, or order issue. We review each case and help with a practical resolution.",
   },
 ];
 

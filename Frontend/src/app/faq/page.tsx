@@ -18,11 +18,7 @@ export default function FAQPage() {
         title="Frequently Asked Questions"
         text="Find answers to common questions about our honey, ordering, delivery, and more."
       />
-      <section className="py-12">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <FAQSection limit={999} />
-        </div>
-      </section>
+      <FAQSection limit={999} />
     </>
   );
 }

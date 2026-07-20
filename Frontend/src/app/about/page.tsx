@@ -45,7 +45,9 @@ export default function AboutPage() {
                 I started beekeeping because I believed in creating something pure and honest. Every jar of honey from HoneyBee Farm is a result of my commitment to the bees, the environment, and my customers.
               </p>
               <p className="mt-4 leading-8 text-stone-700">
-                Located in Dighode, Raigad, our farm is positioned in an area rich with natural flowering plants. This ensures our bees have access to diverse, pesticide-free pollen sources throughout the year.
+                Located in Dighode, Raigad, our farm is positioned near natural
+                flowering plants so our bees have access to diverse forage
+                through the season.
               </p>
               <p className="mt-4 leading-8 text-stone-700">
                 I take pride in every batch of honey we produce. No shortcuts, no additives, just pure honey packed with care.
@@ -111,8 +113,8 @@ export default function AboutPage() {
                     ✓
                   </div>
                   <div>
-                    <p className="font-semibold text-ink">Pesticide-free environment</p>
-                    <p className="text-sm text-stone-600">Natural flowering plants and organic farming practices</p>
+                    <p className="font-semibold text-ink">Flower-rich surroundings</p>
+                    <p className="text-sm text-stone-600">Natural forage areas support healthy bee activity</p>
                   </div>
                 </div>
                 <div className="flex gap-4">

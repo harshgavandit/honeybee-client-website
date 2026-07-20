@@ -12,7 +12,7 @@ export function Footer() {
             Pure honey directly from our farm in {business.location.split(",")[0]}. 100% natural, no additives, delivered fresh.
           </p>
           <div className="mt-4 flex gap-3">
-            <span className="inline-block rounded-full bg-leaf/20 px-3 py-1 text-xs font-semibold text-leaf">
+            <span className="inline-block rounded-full bg-leaf px-3 py-1 text-xs font-semibold text-white">
               Direct from Farm
             </span>
             <span className="inline-block rounded-full bg-honey-500/20 px-3 py-1 text-xs font-semibold text-honey-400">
@@ -52,6 +52,9 @@ export function Footer() {
             </Link>
             <Link href="/legal/returns-refund" className="hover:text-white transition">
               Returns & Refunds
+            </Link>
+            <Link href="/legal/shipping-policy" className="hover:text-white transition">
+              Shipping Policy
             </Link>
             <Link href="/contact" className="hover:text-white transition">
               Contact Us

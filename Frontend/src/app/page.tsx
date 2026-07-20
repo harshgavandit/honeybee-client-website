@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
+import { ArrowRight, CheckCircle2, MessageCircle, ShieldCheck, Truck } from "lucide-react";
 import { DeliveryChecker } from "@/components/delivery-checker";
 import { ProductCard } from "@/components/product-card";
 import { TestimonialsSection } from "@/components/testimonials-section";
@@ -21,7 +21,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-14">
           <div className="flex flex-col justify-center">
             <p className="text-sm font-bold uppercase tracking-wide text-leaf">
-              🍯 Direct from our farm to your table
+              Direct from our farm to your table
             </p>
             <h1 className="mt-4 text-4xl font-bold leading-tight text-ink sm:text-6xl">
               Pure honey. No compromise.
@@ -43,6 +43,16 @@ export default function HomePage() {
               >
                 See Our Process
               </Link>
+            </div>
+            <div className="mt-6 grid gap-3 text-sm text-stone-700 sm:grid-cols-2">
+              <div className="flex items-center gap-2">
+                <ShieldCheck size={18} className="text-leaf" />
+                <span>No added sugar or flavours</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Truck size={18} className="text-leaf" />
+                <span>UPI, COD, and WhatsApp support</span>
+              </div>
             </div>
             <div className="mt-8 max-w-xl">
               <DeliveryChecker />
@@ -89,7 +99,7 @@ export default function HomePage() {
               <p className="text-sm font-bold uppercase tracking-wide text-leaf">
                 Choose your jar
               </p>
-              <h2 className="mt-2 text-3xl font-bold">Find your perfect size</h2>
+                <h2 className="mt-2 text-3xl font-bold">Choose the right jar size</h2>
             </div>
             <Link href="/products" className="font-semibold text-leaf">
               View all products
@@ -123,6 +133,32 @@ export default function HomePage() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      <section className="bg-honey-50 py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-wide text-leaf">
+                Why customers trust us
+              </p>
+              <h2 className="mt-2 text-3xl font-bold">Clear sourcing, simple payment, human support.</h2>
+              <p className="mt-4 leading-8 text-stone-700">
+                Honey is a trust product. We make the buying decision easier by
+                showing where the honey comes from, what each jar costs, how
+                delivery works, and how to reach us before or after ordering.
+              </p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {["Farm location shared", "UPI and COD available", "Order help on WhatsApp"].map((item) => (
+                <div key={item} className="rounded-lg border border-honey-100 bg-white p-5 text-center shadow-soft">
+                  <CheckCircle2 className="mx-auto text-leaf" size={24} />
+                  <p className="mt-3 text-sm font-semibold">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

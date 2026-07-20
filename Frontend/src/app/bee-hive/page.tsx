@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHero } from "@/components/page-hero";
-import { processSteps } from "@/lib/data";
 import { Flower2, Droplets, Sparkles, AlertCircle } from "lucide-react";
 import { generateMetadata } from "@/lib/metadata";
 
@@ -98,6 +97,7 @@ export default function BeeHivePage() {
               width={1400}
               height={600}
               controls
+              preload="metadata"
               className="w-full h-auto object-cover"
               poster="/images/honeycomb-1.jpg"
             >
@@ -191,33 +191,17 @@ export default function BeeHivePage() {
         </div>
       </section>
 
-      {/* Quick Process Overview */}
-      <section className="py-12">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 md:grid-cols-3">
-            {processSteps.map((step) => {
-              const Icon = step.icon;
-              return (
-                <div key={step.title} className="rounded-lg border border-honey-100 bg-white p-6 shadow-soft">
-                  <Icon className="text-leaf" size={28} />
-                  <h2 className="mt-4 text-xl font-bold">{step.title}</h2>
-                  <p className="mt-3 leading-7 text-stone-700">{step.text}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Why This Matters */}
       <section className="py-12 bg-leaf text-white">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-6">Why transparency matters</h2>
           <p className="text-lg leading-8 opacity-90">
-            Many honey sellers cut corners. They source from multiple farms, blend batches, or use heat processing. We do none of that. Our single-origin, raw honey comes from our own farm. You know exactly where it comes from and how it's made.
+            Honey is easier to trust when the process is easy to understand.
+            We show how the hives are cared for, how honey is extracted, and
+            how jars are packed so customers can make a confident decision.
           </p>
           <p className="mt-6 text-lg leading-8 opacity-90">
-            This is why customers trust us. Because trust is earned through transparency.
+            This is why we keep the process visible before asking you to order.
           </p>
         </div>
       </section>

@@ -155,7 +155,7 @@ export function AdminDashboard() {
                         className="focus-ring inline-flex items-center justify-center gap-2 rounded-md border border-stone-300 px-4 py-3 font-semibold"
                       >
                         <Mail size={18} />
-                        Email verified
+                        Gmail verified
                       </Link>
                     </div>
                   </div>

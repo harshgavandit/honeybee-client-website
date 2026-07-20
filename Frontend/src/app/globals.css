@@ -129,21 +129,10 @@ select {
   animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Smooth transitions for interactive elements */
-button,
-a {
-  transition: all 0.2s ease-out;
-}
-
 input:focus,
 textarea:focus,
 select:focus {
   transition: all 0.2s ease-out;
-}
-
-/* Hover effects */
-button:hover:not(:disabled) {
-  transform: translateY(-1px);
 }
 
 /* Loading spinner */
@@ -166,4 +155,3 @@ button:hover:not(:disabled) {
     transition-duration: 0.01ms !important;
   }
 }
-

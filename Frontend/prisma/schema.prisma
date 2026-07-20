@@ -1,0 +1,111 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum OrderStatus {
+  CONFIRMED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  CREATED
+  CAPTURED
+  FAILED
+}
+
+enum PaymentMethod {
+  RAZORPAY
+}
+
+model Product {
+  id          String   @id
+  slug        String   @unique
+  name        String
+  size        String
+  pricePaise  Int
+  imageUrl    String
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  orderItems  OrderItem[]
+}
+
+model Order {
+  id              String        @id
+  status          OrderStatus   @default(CONFIRMED)
+  paymentMethod   PaymentMethod @default(RAZORPAY)
+
+  customerName    String
+  customerEmail   String
+  customerPhone   String
+
+  addressLine1    String
+  addressLine2    String?
+  city            String
+  state           String
+  pincode         String
+
+  trackingNumber  String?
+  notes           String?
+  emailSent       Boolean       @default(false)
+
+  totalPaise      Int
+  paymentId       String        @unique
+
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  payment         Payment       @relation(fields: [paymentId], references: [id])
+  items           OrderItem[]
+
+  @@index([customerEmail])
+  @@index([customerPhone])
+  @@index([pincode])
+}
+
+model OrderItem {
+  id          String @id @default(cuid())
+  orderId     String
+  productId   String
+
+  productName String
+  productSize String
+  quantity    Int
+  unitPaise   Int
+  totalPaise  Int
+
+  order       Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product     Product @relation(fields: [productId], references: [id])
+
+  @@index([orderId])
+  @@index([productId])
+}
+
+model Payment {
+  id                String        @id @default(cuid())
+  razorpayOrderId   String        @unique
+  razorpayPaymentId String?       @unique
+  razorpaySignature String?
+  webhookEventId    String?       @unique
+
+  status            PaymentStatus @default(CREATED)
+  amountPaise       Int
+  currency          String        @default("INR")
+
+  checkoutPayload   Json
+  rawWebhook        Json?
+
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  order             Order?
+}
